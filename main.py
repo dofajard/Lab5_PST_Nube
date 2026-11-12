@@ -117,8 +117,7 @@ def cambiar_estado_actuador(cmd: ComandoActuador):
     conn = sqlite3.connect(DB_NAME) 
     cursor = conn.cursor() 
     cursor.execute( 
-    "UPDATE actuador SET estado = ?, actualizado = CURRENT_TIMESTAMP WHERE id = 1", 
-    (estado_limpio,) 
+        "UPDATE actuador SET estado = ?, actualizado = CURRENT_TIMESTAMP WHERE id = 1", (estado_limpio,) 
     ) 
     conn.commit() 
     conn.close() 
